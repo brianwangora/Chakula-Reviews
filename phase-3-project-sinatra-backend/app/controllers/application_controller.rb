@@ -30,6 +30,12 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  # To find a specific user
+  get "/users/:id" do 
+    user = User.find(params[:id])
+    user.to_json
+  end
+
   # To find the reviews a user has written
   get "/users/:id" do 
     users = User.find(params[:id]).reviews 
