@@ -6,8 +6,7 @@ import FormsDisplayed from "../form/FormsDisplayed";
 import Restaurants from '../restaurants/Restaurants';
 import RestaurantDetails from "../details/RestaurantDetails";
 
-
-export default function App(){
+export default function App() {
     return(
            <Router>
                 <div>
