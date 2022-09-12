@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # To find the review about a certain restaurant
-  get "/restaurants/:id/review" do 
+  get "/restaurants/review/:id" do 
     restaurant = Restaurant.find(params[:id]).reviews
     restaurant.to_json
   end

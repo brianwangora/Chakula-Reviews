@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReviewDetails from "./ReviewDetails";
 
 const RESTAURANT_INFO = "http://localhost:9292/restaurants/"
 
@@ -7,14 +8,10 @@ export default function RestaurantDetails() {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [restaurant_type, setRestaurant_type] = useState("")
-    const [score, setScore] = useState("")
-    const [comment, setComment] = useState("")
 
     let {restaurantId} = useParams()
 
     const restaurantInfo = RESTAURANT_INFO + restaurantId
-    const reviewRetriever = "/review"
-    const restaurantReview = RESTAURANT_INFO + restaurantId + "/review"
 
     const restaurantFetcher = () => {
         fetch (restaurantInfo)
@@ -24,30 +21,10 @@ export default function RestaurantDetails() {
                 setLocation(restaurant.location)
                 setRestaurant_type(restaurant.restaurant_type)
             })
-
-        // fetch (restaurantReview)
-        //     .then((response) => response.json())
-        //     .then((review) => {
-        //         setScore(review.score)
-        //         setComment(review.comment)
-        //     })
-    }
-
-    const reviewFetcher = () => {
-        fetch (restaurantReview)
-            .then((response) => response.json())
-            .then((review) => {
-                setScore(review.score)
-                setComment(review.comment)
-            })
     }
 
     useEffect(
         restaurantFetcher, []
-    )
-
-    useEffect(
-        reviewFetcher, [] 
     )
 
     return(
@@ -56,8 +33,7 @@ export default function RestaurantDetails() {
                 <h2>{name}</h2>
                 <p>This restaurant is located in, {location}.</p>
                 <p> This restaurant is classified as a {restaurant_type} restaurant.</p>
-                <p>The score given is: {score}.</p>
-                <p>Reviewers had this to say about the restaurant: {comment}</p>
+                <ReviewDetails/>
             </center>
         </div>
     )
