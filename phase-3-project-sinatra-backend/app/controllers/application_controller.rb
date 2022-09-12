@@ -19,8 +19,14 @@ class ApplicationController < Sinatra::Base
   end
 
   # To find the review about a certain restaurant
+  get "/restaurants/:id/review" do 
+    restaurant = Restaurant.find(params[:id]).reviews
+    restaurant.to_json
+  end
+
+  # To find a restaurant by id
   get "/restaurants/:id" do 
-    restaurants = Restaurant.find(params[:id]).reviews 
+    restaurants = Restaurant.find(params[:id])
     restaurants.to_json
   end
 
@@ -37,7 +43,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # To find the reviews a user has written
-  get "/users/:id" do 
+  get "/users/:id/reviews" do 
     users = User.find(params[:id]).reviews 
     users.to_json
   end
