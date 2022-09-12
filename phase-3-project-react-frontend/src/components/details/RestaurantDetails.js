@@ -14,7 +14,7 @@ export default function RestaurantDetails() {
 
     const restaurantInfo = RESTAURANT_INFO + restaurantId
     const reviewRetriever = "/review"
-    const restaurantReview = restaurantInfo + reviewRetriever
+    const restaurantReview = RESTAURANT_INFO + restaurantId + "/review"
 
     const restaurantFetcher = () => {
         fetch (restaurantInfo)
@@ -23,8 +23,17 @@ export default function RestaurantDetails() {
                 setName(restaurant.name)
                 setLocation(restaurant.location)
                 setRestaurant_type(restaurant.restaurant_type)
-            }),
+            })
 
+        // fetch (restaurantReview)
+        //     .then((response) => response.json())
+        //     .then((review) => {
+        //         setScore(review.score)
+        //         setComment(review.comment)
+        //     })
+    }
+
+    const reviewFetcher = () => {
         fetch (restaurantReview)
             .then((response) => response.json())
             .then((review) => {
@@ -33,26 +42,23 @@ export default function RestaurantDetails() {
             })
     }
 
-    // const reviewFetcher = () => {
-    //     fetch (restaurantReview)
-    //         .then((response) => response.json())
-    //         .then((review) => {
-    //             setScore(review.score)
-    //             setComment(review.comment)
-    //         })
-    // }
-
     useEffect(
         restaurantFetcher, []
     )
 
+    useEffect(
+        reviewFetcher, [] 
+    )
+
     return(
         <div className="container">
-            <h2>{name}</h2>
-            <p>This restaurant is located in {location}</p>
-            <p> This restaurant is classified as a {restaurant_type}</p>
-            <p>The score given is {score}</p>
-            <p>Reviewers had this to say about the restaurant: {comment}</p>
+            <center>
+                <h2>{name}</h2>
+                <p>This restaurant is located in, {location}.</p>
+                <p> This restaurant is classified as a {restaurant_type} restaurant.</p>
+                <p>The score given is: {score}.</p>
+                <p>Reviewers had this to say about the restaurant: {comment}</p>
+            </center>
         </div>
     )
 }
