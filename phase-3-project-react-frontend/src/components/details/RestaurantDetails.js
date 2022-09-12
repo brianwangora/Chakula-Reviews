@@ -8,6 +8,7 @@ export default function RestaurantDetails() {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [restaurant_type, setRestaurant_type] = useState("")
+    const [id, setId] = useState("")
 
     let {restaurantId} = useParams()
 
@@ -20,6 +21,7 @@ export default function RestaurantDetails() {
                 setName(restaurant.name)
                 setLocation(restaurant.location)
                 setRestaurant_type(restaurant.restaurant_type)
+                setId(restaurant.id)
             })
     }
 
@@ -33,6 +35,7 @@ export default function RestaurantDetails() {
                 <h2>{name}</h2>
                 <p>This restaurant is located in, {location}.</p>
                 <p> This restaurant is classified as a {restaurant_type} restaurant.</p>
+                <p>This restaurant's ID number is {id}.</p>
                 <ReviewDetails/>
             </center>
         </div>
