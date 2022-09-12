@@ -4,8 +4,8 @@ const REVIEWS = "http://localhost:9292/reviews"
 
 export default function ReviewFormDefined(){
     const [id, setId] = useState("")
-    const [userId, setUserId] = useState("")
-    const [restaurantId, setRestaurantId] = useState("")
+    const [user_id, setUserId] = useState("")
+    const [restaurant_id, setRestaurantId] = useState("")
     const [score, setScore] = useState("")
     const [comment, setComment] = useState("")
     const [newReview, setNewReview] = useState("")
@@ -18,8 +18,8 @@ export default function ReviewFormDefined(){
         setComment("")
         const reviewData = {
             id: id,
-            userId: userId,
-            restaurantId: restaurantId,
+            user_id: user_id,
+            restaurant_id: restaurant_id,
             score: score,
             comment: comment,
         };
@@ -39,18 +39,18 @@ export default function ReviewFormDefined(){
             <label>
                 User ID:
                 <input
-                    type="integer"
+                    type="text"
                     name="userId"
-                    value={userId}
+                    value={user_id}
                     onChange={(e) => setUserId(e.target.value)}
                 />
             </label>
             <label>
                 Restaurant ID:
                 <input
-                    type="integer"
+                    type="text"
                     name="restaurantId"
-                    value={restaurantId}
+                    value={restaurant_id}
                     onChange={(e) => setRestaurantId(e.target.value)}
                 />
             </label>
@@ -72,6 +72,7 @@ export default function ReviewFormDefined(){
                     onChange={(e) => setComment(e.target.value)}
                 />
             </label>
+            <button className="button" type="submit">Add a Review</button>
         </form>
     )
 
