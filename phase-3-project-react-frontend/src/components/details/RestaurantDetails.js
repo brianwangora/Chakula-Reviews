@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReviewDetails from "./ReviewDetails";
 
 const RESTAURANT_INFO = "http://localhost:9292/restaurants/"
 
