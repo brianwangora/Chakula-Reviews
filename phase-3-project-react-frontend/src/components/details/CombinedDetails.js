@@ -10,7 +10,7 @@ export default function CombinedDetails() {
                 <div>
                     <RestaurantDetails/>
                 </div>
-                <p>REVIEWS</p>
+                <h3>REVIEWS</h3>
                 <div>
                     <ReviewDetails/>
                 </div>
