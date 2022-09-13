@@ -32,7 +32,7 @@ export default function FormsDisplayed() {
                 <p>First add your name to the system in order to get an ID number which will be useful when filling out your review.</p>
                 <p>Also make sure you remember the restaurant's ID number.</p>
                 <UserFormDefined/>
-                <p>{name}. Welcome, your ID number is {id}.</p>
+                <p>Welcome {name}, your ID number is: {id}.</p>
                 <ReviewFormDefined/>
             </div>
         </div>

@@ -27,10 +27,8 @@ export default function ReviewDetails() {
 
     return(
         <div>
-            <center>
-                <p>The score given is: {score}.</p>
-                <p>Reviewers had this to say about the restaurant: {comment}</p>
-            </center>
+            <p>The score given by reviewers is: {score}.</p>
+            <p>Reviewers had this to say about the restaurant: {comment}</p>
         </div>
     )
 }
