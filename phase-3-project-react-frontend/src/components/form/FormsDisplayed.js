@@ -6,6 +6,7 @@ import ReviewFormDefined from "./ReviewFormDefined";
 export default function FormsDisplayed() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [id, setId] = useState("")
+    const [name, setName] = useState("")
 
     function handleDarkModeClick() {
         setIsDarkMode((isDarkMode) => !isDarkMode);
@@ -16,6 +17,7 @@ export default function FormsDisplayed() {
             .then((response) => response.json())
             .then((user) => {
                 setId(user[user.length - 1].id)
+                setName(user[user.length - 1].name)
             })
     }
 
@@ -30,7 +32,7 @@ export default function FormsDisplayed() {
                 <p>First add your name to the system in order to get an ID number which will be useful when filling out your review.</p>
                 <p>Also make sure you remember the restaurant's ID number.</p>
                 <UserFormDefined/>
-                <p>Your ID number is {id}.</p>
+                <p>{name}. Welcome, your ID number is {id}.</p>
                 <ReviewFormDefined/>
             </div>
         </div>
