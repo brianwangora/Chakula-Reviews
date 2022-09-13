@@ -14,3 +14,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: 5
+  
+
+

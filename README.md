@@ -10,8 +10,10 @@ This review is then displayed with a list of other reviews other users have used
 The aim of this application is to give a central location for the opinions restaurant goers have of the restaurants they have visited.
 
 ## PROJECT LINKS
-The backend is hosted on: 
+The github repository link for the backend is: https://github.com/brianwangora/chakula-reviews-backend
+The backend/API is hosted on: https://chakula-reviews.herokuapp.com with the following endpoints; /restaurants, /restaurants/:id, /restaurants/review/:id, /reviews, /reviews/:id, /users, /users/:id, /users/:id/reviews.
 
+The github repository link for the frontend is: https://github.com/brianwangora/chakula-reviews-frontend
 The frontend is hosted on:
 
 ## PROJECT REQUIREMENTS
