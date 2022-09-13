@@ -10,11 +10,14 @@ This review is then displayed with a list of other reviews other users have used
 The aim of this application is to give a central location for the opinions restaurant goers have of the restaurants they have visited.
 
 ## PROJECT LINKS
-The github repository link for the backend is: https://github.com/brianwangora/chakula-reviews-backend
+The github repository link for the backend is: https://github.com/brianwangora/chakula-reviews-backend.
+
+
 The backend/API is hosted on: https://chakula-reviews.herokuapp.com with the following endpoints; /restaurants, /restaurants/:id, /restaurants/review/:id, /reviews, /reviews/:id, /users, /users/:id, /users/:id/reviews.
 
 The github repository link for the frontend is: https://github.com/brianwangora/chakula-reviews-frontend
-The frontend is hosted on:
+
+The frontend is hosted on: https://chakula-reviews.vercel.app/
 
 ## PROJECT REQUIREMENTS
 ### PROJECT BACKEND
@@ -35,7 +38,7 @@ Through the use of Sinatra to create different API routes, the database can cond
 
 
 ### PROJECT FRONTEND
-This project's frontend is based on react and will interact with the backend to manipulate the database and perform crud functions.
+This project's frontend is based on react and will interact with the API to manipulate the database and perform crud functions.
 
 The react frontend has a total of 12 components that assist in performing the functions of the website to meet expectations.
 
