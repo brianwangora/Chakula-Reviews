@@ -31,13 +31,17 @@ export default function RestaurantDetails() {
 
     return(
         <div className="container">
-            <center>
-                <h2>{name}</h2>
-                <p>This restaurant is located in, {location}.</p>
-                <p> This restaurant is classified as a {restaurant_type} restaurant.</p>
-                <p>This restaurant's ID number is {id}.</p>
-                <ReviewDetails/>
-            </center>
+            <div>
+                <center>
+                    <div>
+                        <h2>{name}</h2>
+                        <p>This restaurant is located in, {location}.</p>
+                        <p> This restaurant is classified as a {restaurant_type} restaurant.</p>
+                        <p>This restaurant's ID number is {id}.</p>
+                    </div>
+                    {/* <ReviewDetails/> */}
+                </center>
+            </div>
         </div>
     )
 }

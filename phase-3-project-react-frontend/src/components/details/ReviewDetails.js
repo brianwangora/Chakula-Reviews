@@ -26,7 +26,7 @@ export default function ReviewDetails() {
     )
 
     return(
-        <div className="container">
+        <div>
             <center>
                 <p>The score given is: {score}.</p>
                 <p>Reviewers had this to say about the restaurant: {comment}</p>
